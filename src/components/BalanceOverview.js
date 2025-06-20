@@ -9,15 +9,17 @@ export default function BalanceOverview({ totalBalance, totalExpense, goal, perc
  
   const formattedBalance = `$${totalBalance.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
   const formattedExpense = `${totalExpense < 0 ? '-' : ''}$${Math.abs(totalExpense).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-  const formattedGoal = `$${goal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
 
   return (
     <View style={styles.container}>
       <View style={styles.row}>
         <View style={styles.col}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', }}>
           <Icon name="open-in-new" size={16} color="#000" />
 
           <Text style={styles.label}>Total Balance</Text>
+          </View>
           <Text style={styles.balance}>{formattedBalance}</Text>
         </View>
         <View style={styles.divider} />
@@ -29,9 +31,7 @@ export default function BalanceOverview({ totalBalance, totalExpense, goal, perc
       
       <ProgressBar percentage={30} amount={20000} />
 
-      <View style={styles.footer}>
-        <Text style={styles.footerText}>30% Of Your Expenses, Looks Good.</Text>
-      </View>
+      
     </View>
   );
 }
@@ -50,8 +50,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   col: {
-    flex: 1,
-    alignItems: 'center',
+    // flex: 1,
+    // alignItems: 'center',
   },
   label: {
     fontSize: 14,
@@ -92,13 +92,5 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: colors.black,
   },
-  footer: {
-    marginTop: 10,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  footerText: {
-    fontSize: 14,
-    color: colors.black,
-  },
+ 
 });
