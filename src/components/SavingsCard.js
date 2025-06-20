@@ -60,7 +60,8 @@ const styles = StyleSheet.create({
   },
   left: {
     alignItems: 'center',
-    width: 90,
+    // width: 90,
+   
   },
   savingsText: {
     color: colors.white,

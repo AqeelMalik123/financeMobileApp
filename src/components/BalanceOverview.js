@@ -16,15 +16,18 @@ export default function BalanceOverview({ totalBalance, totalExpense, goal, perc
       <View style={styles.row}>
         <View style={styles.col}>
           <View style={{ flexDirection: 'row', alignItems: 'center', }}>
-          <Icon name="open-in-new" size={16} color="#000" />
-
+          
+<Icon name="open-in-new" size={16} color="#000" />
           <Text style={styles.label}>Total Balance</Text>
           </View>
           <Text style={styles.balance}>{formattedBalance}</Text>
         </View>
         <View style={styles.divider} />
         <View style={styles.col}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', }}>
+          <Icon name="open-in-new" size={16} color="#000" />
           <Text style={styles.label}>Total Expense</Text>
+          </View>
           <Text style={[styles.balance, styles.expense]}>{formattedExpense}</Text>
         </View>
       </View>
@@ -67,7 +70,7 @@ const styles = StyleSheet.create({
     color: colors.blueAccent, 
   },
   divider: {
-    width: 1,
+    width: "0.5%",
     backgroundColor: colors.borderLight,
     marginHorizontal: 10,
   },

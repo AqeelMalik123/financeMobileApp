@@ -1,25 +1,25 @@
-// src/components/TransactionItem.js
+
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import colors from '../theme/colors';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-export default function TransactionItem({ title, time, date, category, amount, type }) {
-  // type: 'income' or 'expense'
+export default function TransactionItem({ title, time, date, category, amount }) {
+  
   const iconProps = {
     Salary: 'cash',
     Groceries: 'cart',
     Rent: 'home-outline',
-    // add more mappings as needed
+   
   };
-  // fallback icon
   const iconName = iconProps[title] || 'receipt';
   const isExpense = amount < 0;
   const formattedAmount = `${isExpense ? '-' : ''}$${Math.abs(amount).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
   return (
     <View style={styles.container}>
       <View style={styles.left}>
-        <View style={[styles.iconContainer, { backgroundColor: isExpense ? '#ADD8FF' : '#ADD8FF' }]}>
+        
+        <View style={styles.iconContainer}>
           <Icon name={iconName} size={20} color={colors.white} />
         </View>
         <View>
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     marginHorizontal: 20,
     marginBottom: 12,
-    // optional shadow/elevation
+    
   },
   left: {
     flexDirection: 'row',
@@ -59,8 +59,8 @@ const styles = StyleSheet.create({
   iconContainer: {
     width: 40,
     height: 40,
-    borderRadius: 20,
-    backgroundColor: colors.greenPrimary,
+    borderRadius: 15,
+backgroundColor:'#ADD8FF',
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 12,

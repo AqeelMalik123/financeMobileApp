@@ -1,4 +1,4 @@
-// src/components/SegmentControl.js
+
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import colors from '../theme/colors';
@@ -35,13 +35,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: colors.toggleBg,
     marginHorizontal: 20,
-    borderRadius: 20,
+    borderRadius: 15,
     marginTop: 20,
     overflow: 'hidden',
   },
   segment: {
     flex: 1,
-    paddingVertical: 10,
+    // paddingVertical: 10,
+    padding:10,
+      borderRadius: 15,
+    margin:5,
     alignItems: 'center',
   },
   activeSegment: {
@@ -49,6 +52,7 @@ const styles = StyleSheet.create({
   },
   segmentText: {
     fontSize: 14,
+   
     fontWeight: '500',
   },
   activeText: {
