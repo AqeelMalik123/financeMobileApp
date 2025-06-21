@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   progressBarContainer: {
     flexDirection: 'row',
     height: 25,
-    backgroundColor: '#E0E0E0',
+    backgroundColor: colors.white,
     borderRadius: 15,
     overflow: 'hidden',
     alignItems: 'center',
@@ -41,8 +41,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     height: '100%',
-    borderTopLeftRadius: 15,
-    borderBottomLeftRadius: 15,
+  
+     borderRadius: 15,
+    
   },
   percentageText: {
     color: 'white',
@@ -52,6 +53,7 @@ const styles = StyleSheet.create({
   amountContainer: {
     position: 'absolute',
     right: 10,
+    
     justifyContent: 'center',
   },
   amountText: {

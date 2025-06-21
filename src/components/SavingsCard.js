@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
    
   },
   savingsText: {
-    color: colors.white,
+    color: colors.black,
     fontSize: 12,
     textAlign: 'center',
     marginTop: 4,
@@ -87,11 +87,11 @@ const styles = StyleSheet.create({
     marginLeft: 8,
   },
   smallLabel: {
-    color: colors.white,
+    color: colors.black,
     fontSize: 12,
   },
   amount: {
-    color: colors.white,
+    color: colors.black,
     fontSize: 16,
     fontWeight: 'bold',
     marginTop: 2,

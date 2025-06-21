@@ -1,10 +1,11 @@
-// src/navigation/BottomTabNavigator.js
+
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { TouchableOpacity, View, StyleSheet, Platform } from 'react-native';
 import colors from '../theme/colors';
+import BlankScreen from '../screens/blankScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -14,7 +15,7 @@ export default function BottomTabNavigator() {
       initialRouteName="Home"
       screenOptions={({ route }) => {
         const isHome = route.name === 'Home';
-        // Map route names to icon names (outlined variants where available)
+        
         let iconName = 'circle';
         if (route.name === 'Home') iconName = 'home-outline';
         else if (route.name === 'Analytics') iconName = 'chart-bar';
@@ -25,12 +26,12 @@ export default function BottomTabNavigator() {
         return {
           headerShown: false,
           tabBarShowLabel: false,
-          // Disable non-Home tabs
+         
           tabBarButton: (props) => {
             if (isHome) {
               return <TouchableOpacity {...props} />;
             } else {
-              // Show the icon but disable press
+              
               return (
                 <TouchableOpacity
                   {...props}
@@ -44,18 +45,18 @@ export default function BottomTabNavigator() {
             const iconSize =28;
             if (isHome) {
               if (focused) {
-                // Active Home: green circle background with black outline icon
+               
                 return (
                   <View style={styles.focusedIconContainer}>
                     <Icon name={iconName} size={iconSize} color={colors.black} />
                   </View>
                 );
               } else {
-                // Unfocused Home: just black outline icon
+               
                 return <Icon name={iconName} size={iconSize} color={colors.black} />;
               }
             } else {
-              // Other tabs: always black outline icon
+              
               return <Icon name={iconName} size={iconSize} color={colors.black} />;
             }
           },
@@ -64,8 +65,8 @@ export default function BottomTabNavigator() {
       }}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Analytics" component={() => null} />
-      <Tab.Screen name="Transfer" component={() => null} />
+      <Tab.Screen name="Analytics" component={BlankScreen} />
+      <Tab.Screen name="Transfer" component={BlankScreen} />
       <Tab.Screen name="Layers" component={() => null} />
       <Tab.Screen name="Profile" component={() => null} />
     </Tab.Navigator>

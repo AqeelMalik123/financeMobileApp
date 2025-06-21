@@ -20,16 +20,20 @@ export default function TransactionItem({ title, time, date, category, amount })
       <View style={styles.left}>
         
         <View style={styles.iconContainer}>
-          <Icon name={iconName} size={20} color={colors.white} />
+          <Icon name={iconName} size={22} color={colors.white} />
         </View>
         <View>
           <Text style={styles.title}>{title}</Text>
           <Text style={styles.time}>{`${time} - ${date}`}</Text>
         </View>
+         
       </View>
+  <View style={styles.divider} />
       <View style={styles.middle}>
+        
         <Text style={styles.category}>{category}</Text>
       </View>
+      <View style={{...styles.divider,marginRight:1}} />
       <View style={styles.right}>
         <Text style={[styles.amount, isExpense ? styles.expense : styles.income]}>
           {formattedAmount}
@@ -51,6 +55,16 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     
   },
+  divider: {
+      width: 1,
+      backgroundColor: colors.greenPrimary,
+      height: '77%',
+      marginTop:5,
+      
+      
+     
+      // marginVertical: 10,
+    },
   left: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -66,13 +80,13 @@ backgroundColor:'#ADD8FF',
     marginRight: 12,
   },
   title: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: '500',
     color: colors.black,
   },
   time: {
     fontSize: 12,
-    color: colors.grayLightText,
+    color: colors.blueAccent,
     marginTop: 2,
   },
   middle: {
@@ -95,6 +109,6 @@ backgroundColor:'#ADD8FF',
     color: colors.blueAccent,
   },
   income: {
-    color: colors.greenPrimary,
+    color: colors.black,
   },
 });
